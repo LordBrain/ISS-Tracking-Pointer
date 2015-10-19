@@ -9,6 +9,7 @@ import sys
 import math
 import subprocess
 import RPi.GPIO as GPIO
+import urllib2
 
 
 def displayMenuOption( menuID, selected ):
@@ -42,6 +43,7 @@ GPIO.setup(RIGHT_BUTTON_PIN, GPIO.IN)
 GPIO.setup(SELECT_BUTTON_PIN, GPIO.IN)
 
 #CODE HERE TO DOWNLOAD ORBIT FILES
+urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/stations.txt","stations.txt")
 
 # Very important... This lets py-gaugette 'know' what pins to use in order to reset the display
 led = gaugette.ssd1306.SSD1306(reset_pin=RESET_PIN, dc_pin=DC_PIN)
