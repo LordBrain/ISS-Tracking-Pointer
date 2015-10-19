@@ -3,24 +3,22 @@
 #Uses the OLED display from Adafruit's monochrome displays.
 #Code adapted from The Raspberry Pi Guy's examples.
 
-# Imports the necessary libraries... Gaugette 'talks' to the display ;-)
-#import gaugette.ssd1306
+import gaugette.ssd1306
 import time
 import sys
 import math
 import subprocess
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 
 def displayMenuOption( menuID, selected ):
     #Update Display with new menu name
-    #led.clear_display()
-    #text = spaceObjects[menuID]
-    #led.draw_text2(0,0,text,3)
+    led.clear_display()
+    text = spaceObjects[menuID]
+    led.draw_text2(0,0,text,3)
     if(menuID == selected):
-        #led.draw_text2(32,0,"Tracking",1)
-
-    #led.display()
+        led.draw_text2(32,0,"Tracking",1)
+    led.display()
     return
 
 #start tracking on button push
@@ -38,17 +36,17 @@ LEFT_Button_PIN = 17 #Button
 RIGHT_BUTTON_PIN = 18 #Button
 SELECT_BUTTON_PIN = 19 #Button
 
-#GPIO.setmode(GPIO.BCM)
-#GPIO.setup(LEFT_Button_PIN, GPIO.IN)
-#GPIO.setup(RIGHT_BUTTON_PIN, GPIO.IN)
-#GPIO.setup(SELECT_BUTTON_PIN, GPIO.IN)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(LEFT_Button_PIN, GPIO.IN)
+GPIO.setup(RIGHT_BUTTON_PIN, GPIO.IN)
+GPIO.setup(SELECT_BUTTON_PIN, GPIO.IN)
 
 #CODE HERE TO DOWNLOAD ORBIT FILES
 
 # Very important... This lets py-gaugette 'know' what pins to use in order to reset the display
-#led = gaugette.ssd1306.SSD1306(reset_pin=RESET_PIN, dc_pin=DC_PIN)
-#led.begin()
-#led.clear_display() # This clears the display but only when there is a led.display() as well!
+led = gaugette.ssd1306.SSD1306(reset_pin=RESET_PIN, dc_pin=DC_PIN)
+led.begin()
+led.clear_display() # This clears the display but only when there is a led.display() as well!
 
 #Objects to track, IN SPACE!!!
 spaceObjects = ["ISS","Mercury","Venus","Moon","Mars","Jupitor","Saturn","Uranus","Neptune","Pluto","Shutdown"]
@@ -56,7 +54,8 @@ spaceObjects = ["ISS","Mercury","Venus","Moon","Mars","Jupitor","Saturn","Uranus
 trackingSelected = 0
 tracking = 0
 #first run on startup
-#displayMenuOption(spaceObjects[tracking])
+displayMenuOption(tracking,trackingSelected)
+trackThing(trackingSelected)
 
 while True:
     if(GPIO.input(LEFT_Button_PIN)):
@@ -65,7 +64,7 @@ while True:
         if(len(spaceObjects) < tracking)
             tracking = 0
         #Update display function
-        #displayMenuOption(tracking,trackingSelected)
+        displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
     else if(GPIO.input(RIGHT_BUTTON_PIN))
         print("right button pushed")
@@ -73,11 +72,11 @@ while True:
         if(tracking < 0)
             tracking = len(spaceObjects)
         #Update display function
-        #displayMenuOption(tracking,trackingSelected)
+        displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
     else if(GPIO.input(SELECT_BUTTON_PIN))
         print("select button pushed")
         trackingSelected = tracking
-        #trackThing(trackingSelected)
+        trackThing(trackingSelected)
         time.sleep(.5)
         #
