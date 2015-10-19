@@ -22,7 +22,7 @@ def displayMenuOption( menuID, selected ):
     return
 
 #start tracking on button push
-def trackThing( trackID):
+def trackThing( trackID ):
     #First kill any existing tracking script
     #Start new tracking script
     subprocess.call(['python', 'track.py',str(trackID)])
@@ -58,23 +58,23 @@ displayMenuOption(tracking,trackingSelected)
 trackThing(trackingSelected)
 
 while True:
-    if(GPIO.input(LEFT_Button_PIN)):
-        print("left button pushed")
+    if(GPIO.input(RIGHT_Button_PIN) == True):
+        print("right button pushed")
         tracking += 1
         if( len(spaceObjects) < tracking ):
             tracking = 0
         #Update display function
         displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
-    else if(GPIO.input(RIGHT_BUTTON_PIN)):
-        print("right button pushed")
+    else if(GPIO.input(LEFT_BUTTON_PIN) == True):
+        print("left button pushed")
         tracking -= 1
         if( tracking < 0 ):
             tracking = len(spaceObjects)
         #Update display function
         displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
-    else if(GPIO.input(SELECT_BUTTON_PIN)):
+    else if(GPIO.input(SELECT_BUTTON_PIN) == True):
         print("select button pushed")
         trackingSelected = tracking
         trackThing(trackingSelected)
