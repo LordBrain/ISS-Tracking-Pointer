@@ -32,7 +32,7 @@ def trackThing( trackID ):
 # Setting some variables for our pins
 RESET_PIN = 15 #Display Reset
 DC_PIN    = 16 #Display Power
-LEFT_Button_PIN = 17 #Button
+LEFT_BUTTON_PIN = 17 #Button
 RIGHT_BUTTON_PIN = 18 #Button
 SELECT_BUTTON_PIN = 19 #Button
 
@@ -58,7 +58,7 @@ displayMenuOption(tracking,trackingSelected)
 trackThing(trackingSelected)
 
 while True:
-    if(GPIO.input(RIGHT_Button_PIN) == True):
+    if(GPIO.input(RIGHT_BUTTON_PIN) == True):
         print("right button pushed")
         tracking += 1
         if( len(spaceObjects) - 1 < tracking ):
