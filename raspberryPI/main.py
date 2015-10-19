@@ -61,20 +61,20 @@ while True:
     if(GPIO.input(RIGHT_Button_PIN) == True):
         print("right button pushed")
         tracking += 1
-        if( len(spaceObjects) < tracking ):
+        if( len(spaceObjects) - 1 < tracking ):
             tracking = 0
         #Update display function
         displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
-    else if(GPIO.input(LEFT_BUTTON_PIN) == True):
+    elif(GPIO.input(LEFT_BUTTON_PIN) == True):
         print("left button pushed")
         tracking -= 1
         if( tracking < 0 ):
-            tracking = len(spaceObjects)
+            tracking = len(spaceObjects) - 1
         #Update display function
         displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
-    else if(GPIO.input(SELECT_BUTTON_PIN) == True):
+    elif(GPIO.input(SELECT_BUTTON_PIN) == True):
         print("select button pushed")
         trackingSelected = tracking
         trackThing(trackingSelected)
