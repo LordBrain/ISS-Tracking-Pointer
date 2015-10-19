@@ -66,7 +66,7 @@ while True:
         #Update display function
         displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
-    else if(GPIO.input(RIGHT_BUTTON_PIN))
+    else if(GPIO.input(RIGHT_BUTTON_PIN)):
         print("right button pushed")
         tracking -= 1
         if( tracking < 0 ):
@@ -74,7 +74,7 @@ while True:
         #Update display function
         displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
-    else if(GPIO.input(SELECT_BUTTON_PIN))
+    else if(GPIO.input(SELECT_BUTTON_PIN)):
         print("select button pushed")
         trackingSelected = tracking
         trackThing(trackingSelected)
