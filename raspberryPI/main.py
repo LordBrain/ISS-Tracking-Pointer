@@ -33,7 +33,7 @@ def trackThing( trackID ):
 # Setting some variables for our pins
 RESET_PIN = 15 #Display Reset
 DC_PIN    = 16 #Display Power
-LEFT_BUTTON_PIN = 20 #Button
+LEFT_BUTTON_PIN = 23 #Button
 RIGHT_BUTTON_PIN = 21 #Button
 SELECT_BUTTON_PIN = 26 #Button
 
