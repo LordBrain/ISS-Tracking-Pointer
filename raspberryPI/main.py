@@ -9,7 +9,7 @@ import sys
 import math
 import subprocess
 import RPi.GPIO as GPIO
-import urllib
+import urllib2
 
 
 def displayMenuOption( menuID, selected ):
@@ -42,15 +42,58 @@ GPIO.setup(LEFT_BUTTON_PIN, GPIO.IN)
 #GPIO.setup(RIGHT_BUTTON_PIN, GPIO.IN)
 GPIO.setup(SELECT_BUTTON_PIN, GPIO.IN)
 
-#CODE HERE TO DOWNLOAD ORBIT FILES
-#Space Station
-urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/stations.txt","stations.txt")
-#Hubble (HST), other science based ones.
-urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/science.txt","science.txt")
 # Very important... This lets py-gaugette 'know' what pins to use in order to reset the display
 led = gaugette.ssd1306.SSD1306(reset_pin=RESET_PIN, dc_pin=DC_PIN)
 led.begin()
 led.clear_display() # This clears the display but only when there is a led.display() as well!
+
+#CODE HERE TO DOWNLOAD ORBIT FILES
+#Space Station
+text = "Downloading"
+text2 = "Space Station"
+text3 = "Orbit"
+led.clear_display()
+led.draw_text2(0,0,text,1)
+led.draw_text2(0,15,text2,1)
+led.draw_text2(0,30,text3,1)
+led.display()
+try:
+    urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/stations.txt","stations.txt")
+except Exception as e:
+    text = "Error downloading"
+    text2 = "Space Station"
+    text3 = "Orbit"
+    text4 = str(e)
+    led.clear_display()
+    led.draw_text2(0,0,text,1)
+    led.draw_text2(0,15,text2,1)
+    led.draw_text2(0,30,text3,1)
+    led.draw_text2(0,45,text4,1)
+    led.display()
+
+
+#Hubble (HST), other science based ones.
+text = "Downloading"
+text2 = "Science Based"
+text3 = "Satalittes"
+led.clear_display()
+led.draw_text2(0,0,text,1)
+led.draw_text2(0,15,text2,1)
+led.draw_text2(0,30,text3,1)
+led.display()
+try:
+    urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/science.txt","science.txt")
+except Exception as e:
+    text = "Error downloading"
+    text2 = "Science Based"
+    text3 = "Satalittes"
+    text4 = str(e)
+    led.clear_display()
+    led.draw_text2(0,0,text,1)
+    led.draw_text2(0,15,text2,1)
+    led.draw_text2(0,30,text3,1)
+    led.draw_text2(0,45,text4,1)
+    led.display()
 
 #Objects to track, IN SPACE!!!
 spaceObjects = ["ISS","HUbble","Mercury","Venus","Moon","Mars","Jupitor","Saturn","Uranus","Neptune","Pluto","Shutdown"]
