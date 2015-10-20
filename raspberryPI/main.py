@@ -70,7 +70,7 @@ while True:
         #Update display function
         displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
-    elif(GPIO.input(LEFT_BUTTON_PIN) == True):
+    elif(GPIO.input(LEFT_BUTTON_PIN) == False):
         print("left button pushed")
         tracking -= 1
         if( tracking < 0 ):
