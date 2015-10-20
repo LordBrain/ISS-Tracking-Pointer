@@ -18,7 +18,7 @@ def displayMenuOption( menuID, selected ):
     text = spaceObjects[menuID]
     led.draw_text2(0,0,text,3)
     if(menuID == selected):
-        led.draw_text2(0,20,"Tracking",1)
+        led.draw_text2(0,22,"Tracking",1)
     led.display()
     return
 
