@@ -33,9 +33,9 @@ def trackThing( trackID ):
 # Setting some variables for our pins
 RESET_PIN = 15 #Display Reset
 DC_PIN    = 16 #Display Power
-LEFT_BUTTON_PIN = 17 #Button
-RIGHT_BUTTON_PIN = 18 #Button
-SELECT_BUTTON_PIN = 19 #Button
+LEFT_BUTTON_PIN = 20 #Button
+RIGHT_BUTTON_PIN = 21 #Button
+SELECT_BUTTON_PIN = 26 #Button
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LEFT_BUTTON_PIN, GPIO.IN)
@@ -53,7 +53,7 @@ led.begin()
 led.clear_display() # This clears the display but only when there is a led.display() as well!
 
 #Objects to track, IN SPACE!!!
-spaceObjects = ["ISS","Mercury","Venus","Moon","Mars","Jupitor","Saturn","Uranus","Neptune","Pluto","Shutdown"]
+spaceObjects = ["ISS","HUbble","Mercury","Venus","Moon","Mars","Jupitor","Saturn","Uranus","Neptune","Pluto","Shutdown"]
 #defaults to tracking the ISS
 trackingSelected = 0
 tracking = 0
