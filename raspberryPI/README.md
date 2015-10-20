@@ -1,7 +1,7 @@
 #Raspberry Pi ISS (& others) Tracking
-This is the Raspberry PI adaptation of the ISS-Tracking-Pointer project by Grady Hillhouse ([github]("https://github.com/gradyh/ISS-Tracking-Pointer")).
+This is the Raspberry PI adaptation of the ISS-Tracking-Pointer project by Grady Hillhouse ([github](https://github.com/gradyh/ISS-Tracking-Pointer)).
 
-In order to get this to run on a Raspberry PI a few pre-reqs are needed.
+In order to get this to run on a Raspberry PI has a few pre-reqs that are needed.
 
 1. Make sure the Raspberry Pi is update to date:
   sudo apt-get update
