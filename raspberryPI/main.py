@@ -73,6 +73,7 @@ while True:
     elif(GPIO.input(SELECT_BUTTON_PIN) == False):
         print("select button pushed")
         trackingSelected = tracking
+        displayMenuOption(tracking,trackingSelected)
         trackThing(trackingSelected)
         time.sleep(.5)
     # elif(GPIO.input(RIGHT_BUTTON_PIN) == False):
