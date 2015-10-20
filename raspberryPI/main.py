@@ -18,7 +18,7 @@ def displayMenuOption( menuID, selected ):
     text = spaceObjects[menuID]
     led.draw_text2(0,0,text,3)
     if(menuID == selected):
-        led.draw_text2(32,0,"Tracking",1)
+        led.draw_text2(0,25,"Tracking",1)
     led.display()
     return
 
@@ -43,8 +43,10 @@ GPIO.setup(RIGHT_BUTTON_PIN, GPIO.IN)
 GPIO.setup(SELECT_BUTTON_PIN, GPIO.IN)
 
 #CODE HERE TO DOWNLOAD ORBIT FILES
+#Space Station
 urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/stations.txt","stations.txt")
-
+#Hubble (HST), other science based ones.
+urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/science.txt","science.txt")
 # Very important... This lets py-gaugette 'know' what pins to use in order to reset the display
 led = gaugette.ssd1306.SSD1306(reset_pin=RESET_PIN, dc_pin=DC_PIN)
 led.begin()
