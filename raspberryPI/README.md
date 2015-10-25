@@ -25,3 +25,13 @@ In order to get this to run on a Raspberry PI has a few pre-reqs that are needed
 9. Reboot the Pi
 
 ------------------
+#Parts List
+This is the list of parts I used in building out this device.
+
+1. [OLED Display](https://www.adafruit.com/products/938)
+2. [5-way Navigation switch](https://www.adafruit.com/product/504)
+3. [Stepper Motor HAT](https://www.adafruit.com/products/2348)
+4. [Slip Ring](https://www.adafruit.com/product/736)
+5. [Stepper motor](https://www.adafruit.com/product/324)
+6. [Servo](https://www.adafruit.com/product/155)
+7. [Raspberry PI](https://www.adafruit.com/products/1914)

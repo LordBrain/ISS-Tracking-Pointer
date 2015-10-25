@@ -1,6 +1,6 @@
 #Main menu for raspberry pi ISS & others tracker
 
-#Uses the OLED display from Adafruit's monochrome displays.
+#Uses the OLED display monochrome display from Adafruit.
 #Code adapted from The Raspberry Pi Guy's examples.
 
 import gaugette.ssd1306
@@ -57,6 +57,7 @@ led.draw_text2(0,0,text,1)
 led.draw_text2(0,15,text2,1)
 led.draw_text2(0,30,text3,1)
 led.display()
+time.sleep(2)
 try:
     urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/stations.txt","stations.txt")
 except Exception as e:
@@ -70,6 +71,7 @@ except Exception as e:
     led.draw_text2(0,30,text3,1)
     led.draw_text2(0,45,text4,1)
     led.display()
+    time.sleep(2)
 
 
 #Hubble (HST), other science based ones.
@@ -81,6 +83,7 @@ led.draw_text2(0,0,text,1)
 led.draw_text2(0,15,text2,1)
 led.draw_text2(0,30,text3,1)
 led.display()
+time.sleep(2)
 try:
     urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/science.txt","science.txt")
 except Exception as e:
@@ -94,6 +97,7 @@ except Exception as e:
     led.draw_text2(0,30,text3,1)
     led.draw_text2(0,45,text4,1)
     led.display()
+    time.sleep(2)
 
 #Objects to track, IN SPACE!!!
 spaceObjects = ["ISS","HUbble","Mercury","Venus","Moon","Mars","Jupitor","Saturn","Uranus","Neptune","Pluto","Shutdown"]
