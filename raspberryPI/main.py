@@ -100,7 +100,7 @@ except Exception as e:
     time.sleep(2)
 
 #Objects to track, IN SPACE!!!
-spaceObjects = ["ISS","HUbble","Mercury","Venus","Moon","Mars","Jupitor","Saturn","Uranus","Neptune","Pluto","Shutdown"]
+execfile('objectList.py')
 #defaults to tracking the ISS
 trackingSelected = 0
 tracking = 0

@@ -7,6 +7,9 @@ from main import spaceObjects
 #load location information
 execfile('location.py')
 
+# Object list
+execfile('objectList.py')
+
 #arguments passed from main.
 trackObject = int(sys.argv[1])
 
@@ -17,4 +20,4 @@ print("Site Lat Rad:")
 print(siteLatRad)
 print("Site Long Rad:")
 print(siteLonRad)
-print(main[0])
+print(spaceObjects[0])
