@@ -1,7 +1,7 @@
 import sys
 import math
 import time
-import main.py
+from main import *
 
 #This will be where the tracking happens.
 #load location information
