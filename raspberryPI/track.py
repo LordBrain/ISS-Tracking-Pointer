@@ -12,14 +12,15 @@ execfile('objectList.py')
 #arguments passed from main.
 trackObject = int(sys.argv[1])
 
-if(trackObject == "11"):
+if(trackObject == 11):
     print("Shutting down")
-    execfile("shutdown.py")
+    execfile('shutdown.py')
 
 
 #debug info
 print("Tracking:")
 print(trackObject)
+print(spaceObjects[trackObject])
 print("Site Lat Rad:")
 print(siteLatRad)
 print("Site Long Rad:")
