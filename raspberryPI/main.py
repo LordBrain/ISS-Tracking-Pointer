@@ -68,8 +68,8 @@ except Exception as e:
     led.clear_display()
     led.draw_text2(0,0,text,1)
     led.draw_text2(0,10,text2,1)
-    led.draw_text2(0,20,text3,1)
-    led.draw_text2(0,30,text4,1)
+    led.draw_text2(0,20,text4,1)
+    #led.draw_text2(0,30,text4,1)
     led.display()
     time.sleep(2)
 
