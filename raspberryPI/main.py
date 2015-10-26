@@ -9,7 +9,7 @@ import sys
 import math
 import subprocess
 import RPi.GPIO as GPIO
-import urllib2
+import urllib
 
 
 def displayMenuOption( menuID, selected ):
