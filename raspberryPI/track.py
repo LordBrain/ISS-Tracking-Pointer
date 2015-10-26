@@ -12,6 +12,11 @@ execfile('objectList.py')
 #arguments passed from main.
 trackObject = int(sys.argv[1])
 
+if trackObject == 11
+    print("Shutting down")
+    execfile("shutdown.py")
+
+
 #debug info
 print("Tracking:")
 print(trackObject)
