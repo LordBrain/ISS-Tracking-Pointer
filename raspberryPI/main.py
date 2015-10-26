@@ -33,9 +33,9 @@ def trackThing( trackID ):
 # Setting some variables for our pins
 RESET_PIN = 15 #Display Reset
 DC_PIN    = 16 #Display Power
-LEFT_BUTTON_PIN = 20 #Button
-#RIGHT_BUTTON_PIN = 21 #Button
-SELECT_BUTTON_PIN = 21 #Button
+LEFT_BUTTON_PIN = 21 #Button
+RIGHT_BUTTON_PIN = 20 #Button
+SELECT_BUTTON_PIN = 26 #Button
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LEFT_BUTTON_PIN, GPIO.IN)
@@ -123,12 +123,12 @@ while True:
         displayMenuOption(tracking,trackingSelected)
         trackThing(trackingSelected)
         time.sleep(.5)
-    # elif(GPIO.input(RIGHT_BUTTON_PIN) == False):
-    #     print("right button pushed")
-    #     tracking += 1
-    #     if( len(spaceObjects) - 1 < tracking ):
-    #         tracking = 0
-    #     #Update display function
-    #     displayMenuOption(tracking,trackingSelected)
-    #     time.sleep(.5)
-    #     #
+    elif(GPIO.input(RIGHT_BUTTON_PIN) == False):
+        print("right button pushed")
+        tracking += 1
+        if( len(spaceObjects) - 1 < tracking ):
+            tracking = 0
+        #Update display function
+        displayMenuOption(tracking,trackingSelected)
+        time.sleep(.5)
+        #
