@@ -80,8 +80,8 @@ text2 = "Science Based"
 text3 = "Satalittes"
 led.clear_display()
 led.draw_text2(0,0,text,1)
-led.draw_text2(0,15,text2,1)
-led.draw_text2(0,30,text3,1)
+led.draw_text2(0,10,text2,1)
+led.draw_text2(0,20,text3,1)
 led.display()
 time.sleep(2)
 try:
@@ -93,9 +93,9 @@ except Exception as e:
     text4 = str(e)
     led.clear_display()
     led.draw_text2(0,0,text,1)
-    led.draw_text2(0,15,text2,1)
-    led.draw_text2(0,30,text3,1)
-    led.draw_text2(0,45,text4,1)
+    led.draw_text2(0,10,text2,1)
+    led.draw_text2(0,20,text4,1)
+    # led.draw_text2(0,45,text4,1)
     led.display()
     time.sleep(2)
 
