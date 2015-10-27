@@ -59,7 +59,7 @@ elif(trackObject == 10):
     subprocess.Popen(['python','startTrack.py','10'])
 elif(trackObject == 11):
     print("Shutting down")
-    execfile('shutdown.py')
+    call(["sudo", "shutdown", "-h", "now"])
 
 
 #debug info
