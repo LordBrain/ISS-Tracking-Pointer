@@ -60,12 +60,12 @@ while True:
     print(trackObject)
     print(objectList.spaceObjects[trackObject])
     # Need logic to check if its a satalite or not.
-    if not (trackObject == 0 or trackObject == 1)
+    if not (trackObject == 0 or trackObject == 1):
         print("Tracking a Planet")
         process = Popen([command, "config.siteLat", "config.siteLon"], stdout=PIPE)
         (output, err) = process.communicate()
         print(output)
         exit_code = process.wait()
-    else
+    else:
         print("Tracking satalite")
     time.sleep(5)
