@@ -12,6 +12,7 @@ import RPi.GPIO as GPIO
 import config
 import objectList
 
+print("startTrack.py")
 trackObject = int(sys.argv[1])
 GPIO.setmode(GPIO.BCM)
 X_LINE_PIN = 5 # Line Sensor Pin
