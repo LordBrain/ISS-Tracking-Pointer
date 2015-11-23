@@ -55,5 +55,5 @@ atexit.register(turnOffMotors)
 while True:
     print("Tracking:")
     print(trackObject)
-    print(objectList[trackObject])
+    print(objectList.spaceObjects[trackObject])
     time.sleep(5)
