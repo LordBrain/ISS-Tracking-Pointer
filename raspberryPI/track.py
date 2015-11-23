@@ -6,10 +6,12 @@ import shlex
 
 #This will be where the tracking happens.
 #load location information
-execfile('location.py')
+import config
+import objectList
+#execfile('location.py')
 
 # Object list
-execfile('objectList.py')
+#execfile('objectList.py')
 
 # Kill command
 # killTrack = shlex.split("ps ax | grep startTrack.py | grep -v grep | awk '{ print $1 }' | xargs sudo kill -9")
@@ -82,9 +84,9 @@ elif(trackObject == 11):
 #debug info
 print("Tracking:")
 print(trackObject)
-print(spaceObjects[trackObject])
+print(objectList.spaceObjects[trackObject])
 print("Site Lat Rad:")
-print(siteLatRad)
+print(config.siteLatRad)
 print("Site Long Rad:")
-print(siteLonRad)
-print(spaceObjects[0])
+print(config.siteLonRad)
+print(objectList.spaceObjects[0])
