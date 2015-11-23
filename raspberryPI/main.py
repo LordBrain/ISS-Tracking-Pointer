@@ -11,6 +11,9 @@ import subprocess
 import RPi.GPIO as GPIO
 import urllib
 
+# load project files.
+import objectList
+
 
 def displayMenuOption( menuID, selected ):
     #Update Display with new menu name
@@ -37,7 +40,7 @@ RESET_PIN = 15 #Display Reset
 DC_PIN    = 16 #Display Power
 LEFT_BUTTON_PIN = 21 #Button
 RIGHT_BUTTON_PIN = 20 #Button
-SELECT_BUTTON_PIN = 26 #Button
+SELECT_BUTTON_PIN = 19 #Button
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LEFT_BUTTON_PIN, GPIO.IN)
@@ -61,7 +64,7 @@ led.draw_text2(0,20,text3,1)
 led.display()
 time.sleep(2)
 try:
-    urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/stations.txt","stations.txt")
+    urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/stations.txt","/tmp/stations.txt")
 except Exception as e:
     text = "Error downloading"
     text2 = "Space Station"
@@ -87,7 +90,7 @@ led.draw_text2(0,20,text3,1)
 led.display()
 time.sleep(2)
 try:
-    urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/science.txt","science.txt")
+    urllib.urlretrieve("http://www.celestrak.com/NORAD/elements/science.txt","/tmp/science.txt")
 except Exception as e:
     text = "Error downloading"
     text2 = "Science Based"
@@ -102,7 +105,7 @@ except Exception as e:
     time.sleep(2)
 
 #Objects to track, IN SPACE!!!
-execfile('objectList.py')
+#execfile('objectList.py')
 #defaults to tracking the ISS
 trackingSelected = 0
 tracking = 0
@@ -115,7 +118,7 @@ while True:
         print("left button pushed")
         tracking -= 1
         if( tracking < 0 ):
-            tracking = len(spaceObjects) - 1
+            tracking = len(objectList.spaceObjects) - 1
         #Update display function
         displayMenuOption(tracking,trackingSelected)
         time.sleep(.5)
@@ -128,7 +131,7 @@ while True:
     elif(GPIO.input(RIGHT_BUTTON_PIN) == False):
         print("right button pushed")
         tracking += 1
-        if( len(spaceObjects) - 1 < tracking ):
+        if( len(objectList.spaceObjects) - 1 < tracking ):
             tracking = 0
         #Update display function
         displayMenuOption(tracking,trackingSelected)

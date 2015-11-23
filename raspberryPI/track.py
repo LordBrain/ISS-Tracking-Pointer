@@ -12,8 +12,8 @@ execfile('location.py')
 execfile('objectList.py')
 
 # Kill command
-killTrack = shlex.split("ps ax | grep startTrack.py | grep -v grep | awk '{ print $1 }' | xargs sudo kill -9")
-print(killTrack)
+# killTrack = shlex.split("ps ax | grep startTrack.py | grep -v grep | awk '{ print $1 }' | xargs sudo kill -9")
+# print(killTrack)
 
 bashKill="ps ax | grep startTrack.py | grep -v grep | awk '{ print $1 }' | xargs sudo kill -9"
 #arguments passed from main.
