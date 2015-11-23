@@ -85,6 +85,4 @@ elif(trackObject == 11):
 print("Tracking:")
 print(trackObject)
 print(objectList.spaceObjects[trackObject])
-print("Site Long Rad:")
-print(config.siteLonRad)
 print(objectList.spaceObjects[0])

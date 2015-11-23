@@ -42,14 +42,14 @@ def findZero():
 
 atexit.register(turnOffMotors)
 
-stepperX = mh.getStepper(200, 1)       # 200 steps/rev, motor port #1 This is for the X Axis motor
-stepperX.setSpeed(30)                  # 30 RPM
-
-stepperY = mh.getStepper(400, 2)       # 400 steps/rev, motor port #1 This is for the Y Axis motor
-stepperY.setSpeed(30)                  # 30 RPM
-
-# Move motors to zero
-findZero()
+# stepperX = mh.getStepper(200, 1)       # 200 steps/rev, motor port #1 This is for the X Axis motor
+# stepperX.setSpeed(30)                  # 30 RPM
+#
+# stepperY = mh.getStepper(400, 2)       # 400 steps/rev, motor port #1 This is for the Y Axis motor
+# stepperY.setSpeed(30)                  # 30 RPM
+#
+# # Move motors to zero
+# findZero()
 
 # Debug testting stuff:
 while True:
