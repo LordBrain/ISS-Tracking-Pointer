@@ -11,8 +11,9 @@ print("Tracking:")
 print(trackObject)
 print(objectList.spaceObjects[trackObject])
 
-
-process = Popen(["/home/pi/Astro/libnova-0.15.0/examples/pointer_mars", "config.siteLat", "config.siteLon"], stdout=PIPE)
+command = "/home/pi/Astro/libnova-0.15.0/examples/pointer_" + str(objectList.spaceObjects[trackObject]).lower()
+print(command)
+process = Popen([command, "config.siteLat", "config.siteLon"], stdout=PIPE)
 (output, err) = process.communicate()
 print(output)
 exit_code = process.wait()

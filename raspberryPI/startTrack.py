@@ -51,9 +51,21 @@ atexit.register(turnOffMotors)
 # # Move motors to zero
 # findZero()
 
+# command to get data from astro.
+command = "/home/pi/Astro/libnova-0.15.0/examples/pointer_" + str(objectList.spaceObjects[trackObject]).lower()
+
 # Debug testting stuff:
 while True:
     print("Tracking:")
     print(trackObject)
     print(objectList.spaceObjects[trackObject])
+    # Need logic to check if its a satalite or not.
+    if not (trackObject == 0 or trackObject == 1)
+        print("Tracking a Planet")
+        process = Popen([command, "config.siteLat", "config.siteLon"], stdout=PIPE)
+        (output, err) = process.communicate()
+        print(output)
+        exit_code = process.wait()
+    else
+        print("Tracking satalite")
     time.sleep(5)
