@@ -15,6 +15,7 @@ import pigpio
 import config
 import objectList
 
+#Servo stuff
 servos = 25 #GPIO number
 pi1 = pigpio.pi()
 #pulsewidth can only set between 500-2500
