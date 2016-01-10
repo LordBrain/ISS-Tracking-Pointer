@@ -20,11 +20,12 @@ searchlines = f.readlines()
 f.close()
 for i, line in enumerate(searchlines):
     if "ISS" in line:
-        for l in searchlines[i:i+3]: exec("l%d = %s" % (i, l),
-        print("l%d" % (i)),
-        print
+        for l in searchlines[i:i+3]: l[i] = l
+        #     exec("l%d = %s" % (i, l),
+        # print("l%d" % (i)),
+        # print
 
-print("l1: %s" % (l1))
+print("l1: %s" % (l[0]))
 # time.strftime("%Y/%m/%d %H:%M:%S")
 
 # Load Satellite TLE data.
