@@ -3,7 +3,7 @@ import math
 import datetime
 # import config file
 import config
-
+config.path.insert(0, '../')
 
 current_time = str(datetime.datetime.now())
 
