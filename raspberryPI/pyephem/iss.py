@@ -21,8 +21,8 @@ f.close()
 for i, line in enumerate(searchlines):
     if "ISS" in line:
         for l in searchlines[i:i+3]: print l,
-            exec("l%d = %s" % (i + 1, l)
-        print
+        exec("l%d = %s" % (i + 1, l)
+        # print
 
 print("l1: %s" % (l1))
 # time.strftime("%Y/%m/%d %H:%M:%S")
