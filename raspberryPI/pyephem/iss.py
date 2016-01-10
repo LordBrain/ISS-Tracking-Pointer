@@ -1,7 +1,6 @@
 import ephem
 import math
 import datetime
-import numarray
 # import config file
 import sys
 sys.path.append('../')
@@ -16,7 +15,7 @@ location.elevation = config.siteAlt
 location.pressure = 0
 location.date = current_time
 
-line=[]
+line = []
 
 f = open("/tmp/stations.txt", "r")
 searchlines = f.readlines()
