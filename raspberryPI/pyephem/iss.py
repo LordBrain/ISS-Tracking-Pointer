@@ -37,9 +37,9 @@ print(space_array[2])
 # l1 = 'ISS (ZARYA)'
 # l2 = '1 25544U 98067A   15362.57617266  .00007229  00000-0  11208-3 0  9992'
 # l3 = '2 25544  51.6430 193.9420 0008214 334.7441 131.3770 15.55152352978280'
-# sat = ephem.readtle(l1,l2,l3)
-# sat.compute(location)
-
+sat = ephem.readtle(space_array[0],space_array[1],space_array[2])
+sat.compute(location)
+print("%s;%s" % (sat.alt / ephem.degree, sat.az / ephem.degree))
 
 # body = ephem.Mars(location)
 # output Alt;AZ
