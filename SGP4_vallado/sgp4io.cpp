@@ -2,8 +2,8 @@
 *
 *                               sgp4io.cpp
 *
-*    this file contains a function to read two line element sets. while 
-*    not formerly part of the sgp4 mathematical theory, it is 
+*    this file contains a function to read two line element sets. while
+*    not formerly part of the sgp4 mathematical theory, it is
 *    required for practical implemenation.
 *
 *                            companion code for
@@ -49,7 +49,7 @@
 *  inputs        :
 *    longstr1    - first line of the tle
 *    longstr2    - second line of the tle
-*    typerun     - type of run                    verification 'v', catalog 'c', 
+*    typerun     - type of run                    verification 'v', catalog 'c',
 *                                                 manual 'm'
 *    typeinput   - type of manual input           mfe 'm', epoch 'e', dayofyr 'd'
 *    opsmode     - mode of operation afspc or improved 'a', 'i'
@@ -96,7 +96,7 @@ void twoline2rv
        satrec.error = 0;
 
        // set the implied decimal points since doing a formated read
-       // fixes for bad input data values (missing, ...)
+       // fixes for bad input data values (issing, ...)
        for (j = 10; j <= 15; j++)
            if (longstr1[j] == ' ')
                longstr1[j] = '_';
@@ -246,7 +246,7 @@ void twoline2rv
              }
          }
 
-       // ------------ perform complete catalog evaluation, -+ 1 day ----------- 
+       // ------------ perform complete catalog evaluation, -+ 1 day -----------
        if (typerun == 'c')
          {
            startmfe = -1440.0;
@@ -259,4 +259,3 @@ void twoline2rv
                  satrec.ecco, satrec.argpo, satrec.inclo, satrec.mo, satrec.no,
                  satrec.nodeo, satrec);
     } // end twoline2rv
-
