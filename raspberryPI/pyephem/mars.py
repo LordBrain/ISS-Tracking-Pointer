@@ -2,8 +2,9 @@ import ephem
 import math
 import datetime
 # import config file
+import sys
+config.path.append('../')
 import config
-config.path.append('/home/pi/git/ISS-Tracking-Pointer/raspberryPI')
 
 current_time = str(datetime.datetime.now())
 
