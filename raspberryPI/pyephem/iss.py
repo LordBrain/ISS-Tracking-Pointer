@@ -20,7 +20,7 @@ searchlines = f.readlines()
 f.close()
 for i, line in enumerate(searchlines):
     if "ISS" in line:
-        for l in searchlines[i:i+3]: print l,
+        for l in searchlines[i:i+2]: print l,
         print
 
 # time.strftime("%Y/%m/%d %H:%M:%S")
