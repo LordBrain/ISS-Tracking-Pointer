@@ -15,17 +15,19 @@ location.elevation = config.siteAlt
 location.pressure = 0
 location.date = current_time
 
+line=[]
+
 f = open("/tmp/stations.txt", "r")
 searchlines = f.readlines()
 f.close()
 for i, line in enumerate(searchlines):
     if "ISS" in line:
-        for l in searchlines[i:i+3]: l[i] = l
+        for l in searchlines[i:i+3]: line.append(l)
         #     exec("l%d = %s" % (i, l),
         # print("l%d" % (i)),
         # print
 
-print("l1: %s" % (l[0]))
+# print("l1: %s" % (l[0]))
 # time.strftime("%Y/%m/%d %H:%M:%S")
 
 # Load Satellite TLE data.
