@@ -29,6 +29,7 @@ for i, line in enumerate(searchlines):
         # print("l%d" % (i)),
         # print
 
+print(space_array[0])
 # print("l1: %s" % (l[0]))
 # time.strftime("%Y/%m/%d %H:%M:%S")
 
