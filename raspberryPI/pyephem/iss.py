@@ -22,8 +22,7 @@ searchlines = f.readlines()
 f.close()
 for i, line in enumerate(searchlines):
     if "ISS" in line:
-        for l in searchlines[i:i+3]: print l,
-        print
+        for l in searchlines[i:i+3]: print l
         #     exec("l%d = %s" % (i, l),
         # print("l%d" % (i)),
         # print
