@@ -3,7 +3,7 @@ import math
 import datetime
 # import config file
 import config
-config.path.append('../')
+config.path.append('/home/pi/git/ISS-Tracking-Pointer/raspberryPI/pyephem')
 
 current_time = str(datetime.datetime.now())
 
