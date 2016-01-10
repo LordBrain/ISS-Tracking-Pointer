@@ -15,7 +15,7 @@ location.elevation = config.siteAlt
 location.pressure = 0
 location.date = current_time
 
-line = []
+space_array = []
 
 f = open("/tmp/stations.txt", "r")
 searchlines = f.readlines()
@@ -24,7 +24,7 @@ for i, line in enumerate(searchlines):
     if "ISS" in line:
         for l in searchlines[i:i+3]: print l,
         print
-        line.append(l)
+        space_array.append(l)
         #     exec("l%d = %s" % (i, l),
         # print("l%d" % (i)),
         # print
