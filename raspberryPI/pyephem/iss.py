@@ -24,6 +24,7 @@ for i, line in enumerate(searchlines):
         exec("l%d = %s" % (i + 1, l)
         # print
 
+
 print("l1: %s" % (l1))
 # time.strftime("%Y/%m/%d %H:%M:%S")
 
