@@ -9,9 +9,9 @@ import config
 current_time = str(datetime.datetime.now())
 
 location = ephem.Observer()
-location.lon = siteLon
-location.lat = siteLat
-location.elevation = siteAlt
+location.lon = config.siteLon
+location.lat = config.siteLat
+location.elevation = config.siteAlt
 location.pressure = 0
 location.date = current_time
 # time.strftime("%Y/%m/%d %H:%M:%S")
