@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import ephem
 import math
 import datetime
